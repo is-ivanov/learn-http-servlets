@@ -18,7 +18,7 @@ public class HttpClientRunner {
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create("http://localhost:9000"))
 				.header("content-type", "application/json")
-				.POST(HttpRequest.BodyPublishers.ofFile(Path.of("src", "main", "resources", "first.json")))
+				.POST(HttpRequest.BodyPublishers.ofFile(Path.of( "resources", "first.json")))
 				.build();
 		var response1 = httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString());
 		var response2 = httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString());

@@ -47,7 +47,7 @@ public class HttpServer {
 
 			Thread.sleep(10_000);
 //			step 2 handle response
-			byte[] body = Files.readAllBytes(Path.of("src", "main", "resources", "example.html"));
+			byte[] body = Files.readAllBytes(Path.of("resources", "example.html"));
 			var headers = """
 					HTTP/1.1 200 OK
 					content-type: text/html
