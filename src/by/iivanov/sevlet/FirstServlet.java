@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Map;
 
 @WebServlet("/first")
 public class FirstServlet  extends HttpServlet {
@@ -20,6 +21,9 @@ public class FirstServlet  extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String param = req.getParameter("param");
+		Map<String, String[]> parameterMap = req.getParameterMap();
+
 		var headerNames = req.getHeaderNames();
 		while (headerNames.hasMoreElements()) {
 			var header = headerNames.nextElement();
@@ -33,6 +37,12 @@ public class FirstServlet  extends HttpServlet {
 			writer.write("<h1>Привет с первого сервлета!</h1>");
 		}
 
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Map<String, String[]> parameterMap = req.getParameterMap();
+		System.out.println(parameterMap.toString());
 	}
 
 	@Override
