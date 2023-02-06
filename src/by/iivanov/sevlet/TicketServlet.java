@@ -1,4 +1,4 @@
-package by.iivanov.server;
+package by.iivanov.sevlet;
 
 import by.iivanov.service.TicketService;
 import jakarta.servlet.ServletException;
