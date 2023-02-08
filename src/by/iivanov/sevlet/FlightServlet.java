@@ -29,7 +29,7 @@ public class FlightServlet extends HttpServlet {
 					<li>
 						<a href="/tickets?flightId=%d">%s</a>
 					</li>
-					""".formatted(flightDto.id(), flightDto.description()));
+					""".formatted(flightDto.getId(), flightDto.getDescription()));
 		});
 		writer.write("</ul>");
 	}

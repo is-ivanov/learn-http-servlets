@@ -1,12 +1,14 @@
 package by.iivanov.dto;
 
-public record FlightDto(Long id, String description) {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Value;
 
-	@Override
-	public String toString() {
-		return "FlightDto{" +
-				"id=" + id +
-				", description='" + description + '\'' +
-				'}';
-	}
+@Value
+@Builder
+@AllArgsConstructor
+public class FlightDto {
+	Long id;
+	String description;
+
 }
