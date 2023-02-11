@@ -1,5 +1,8 @@
 package by.iivanov.sevlet;
 
+import by.iivanov.dto.CreateUserDto;
+import by.iivanov.exception.ValidationException;
+import by.iivanov.service.UserService;
 import by.iivanov.util.JspHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,6 +16,8 @@ import java.util.List;
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
 
+	private final UserService userService = UserService.getInstance();
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("roles", List.of("USER", "ADMIN"));
@@ -23,6 +28,21 @@ public class RegistrationServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name = req.getParameter("name");
+		CreateUserDto userDto = CreateUserDto.builder()
+				.name(req.getParameter("name"))
+				.birthday(req.getParameter("birthday"))
+				.email(req.getParameter("email"))
+				.password(req.getParameter("password"))
+				.role(req.getParameter("role"))
+				.gender(req.getParameter("gender"))
+				.build();
+
+		try {
+			userService.create(userDto);
+			resp.sendRedirect("/login");
+		} catch (ValidationException e) {
+			req.setAttribute("errors", e.getErrors());
+			doGet(req, resp);
+		}
 	}
 }
