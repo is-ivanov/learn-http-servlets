@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 @WebFilter(value = "/*",
-		servletNames = {
-				"RegistrationServlet"
-		},
+//		servletNames = {
+//				"RegistrationServlet"
+//		},
 		initParams = {
 				@WebInitParam(name = "param1", value = "paramValue")
 		},
