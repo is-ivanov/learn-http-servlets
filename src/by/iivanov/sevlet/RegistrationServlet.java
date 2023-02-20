@@ -4,6 +4,7 @@ import by.iivanov.dto.CreateUserDto;
 import by.iivanov.exception.ValidationException;
 import by.iivanov.service.UserService;
 import by.iivanov.util.JspHelper;
+import by.iivanov.util.UrlPath;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024)
-@WebServlet("/registration")
+@WebServlet(UrlPath.REGISTRATION)
 public class RegistrationServlet extends HttpServlet {
 
 	private final UserService userService = UserService.getInstance();
