@@ -1,4 +1,4 @@
-package by.iivanov.sevlet;
+package by.iivanov.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/dispatcher")
 public class DispatcherServlet extends HttpServlet {

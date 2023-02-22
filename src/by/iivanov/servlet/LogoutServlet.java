@@ -1,4 +1,4 @@
-package by.iivanov.sevlet;
+package by.iivanov.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

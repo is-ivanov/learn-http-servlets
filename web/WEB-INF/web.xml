@@ -6,7 +6,7 @@
 
     <!--    <servlet>-->
     <!--        <servlet-name>FirstServlet</servlet-name>-->
-    <!--        <servlet-class>by.iivanov.sevlet.FirstServlet</servlet-class>-->
+    <!--        <servlet-class>by.iivanov.servlet.FirstServlet</servlet-class>-->
     <!--    </servlet>-->
     <!--    <servlet-mapping>-->
     <!--        <servlet-name>FirstServlet</servlet-name>-->

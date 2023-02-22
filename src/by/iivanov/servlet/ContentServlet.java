@@ -1,4 +1,4 @@
-package by.iivanov.sevlet;
+package by.iivanov.servlet;
 
 import by.iivanov.dto.FlightDto;
 import by.iivanov.service.FlightService;

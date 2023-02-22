@@ -1,4 +1,4 @@
-package by.iivanov.sevlet;
+package by.iivanov.servlet;
 
 import by.iivanov.dto.UserDto;
 import by.iivanov.service.UserService;
